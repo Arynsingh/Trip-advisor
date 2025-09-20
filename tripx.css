@@ -1,0 +1,140 @@
+:root {
+  --bg: #f6f7fb;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --accent: #4f46e5;
+  --radius: 12px;
+  --shadow: 0 6px 18px rgba(15,23,42,0.08);
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  margin: 0;
+  color: #0f172a;
+}
+
+.wrap {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+header p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 18px;
+}
+@media (max-width: 880px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sidebar {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+
+.label {
+  display: block;
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.input, .select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+.range-pair {
+  display: flex;
+  gap: 8px;
+}
+
+.chips {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.chip {
+  padding: 6px 8px;
+  border-radius: 999px;
+  border: 1px solid #ccc;
+  text-align: center;
+  cursor: pointer;
+}
+.chip.selected {
+  background: var(--accent);
+  color: white;
+}
+
+.btn {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.btn.primary {
+  background: var(--accent);
+  color: white;
+  border: none;
+}
+.btn.ghost {
+  background: white;
+  border: 1px solid #ccc;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+.card-body {
+  padding: 10px;
+}
+.card-body h3 {
+  margin: 0;
+  font-size: 16px;
+}
+.card-body p {
+  font-size: 13px;
+  color: var(--muted);
+}
