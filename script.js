@@ -99,3 +99,42 @@ sortSelect.addEventListener("change", applyFilters);
 
 renderSeasonChips();
 applyFilters(); // initial render
+// --- Chatbot Functionality ---
+const chatbotToggle = document.getElementById("chatbot-toggle");
+const chatbotContainer = document.getElementById("chatbot-container");
+const chatbotMessages = document.getElementById("chatbot-messages");
+const chatbotInput = document.getElementById("chatbot-input");
+const chatbotSend = document.getElementById("chatbot-send");
+
+chatbotToggle.addEventListener("click", () => {
+  chatbotContainer.style.display = chatbotContainer.style.display === "flex" ? "none" : "flex";
+});
+
+chatbotSend.addEventListener("click", sendMessage);
+chatbotInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") sendMessage();
+});
+
+function sendMessage() {
+  const text = chatbotInput.value.trim();
+  if (!text) return;
+  addMessage(text, "user");
+  chatbotInput.value = "";
+
+  // Simple AI-like responses
+  setTimeout(() => {
+    let reply = "I’m here to help you plan your trip!";
+    if (text.toLowerCase().includes("goa")) reply = "Goa is great in Winter (Nov–Feb). Would you like hotel suggestions?";
+    if (text.toLowerCase().includes("budget")) reply = "You can set a price filter in the sidebar to find budget-friendly stays.";
+    if (text.toLowerCase().includes("hello")) reply = "Hi there! 👋 How can I assist you today?";
+    addMessage(reply, "bot");
+  }, 600);
+}
+
+function addMessage(text, sender) {
+  const msg = document.createElement("div");
+  msg.className = `chatbot-message ${sender}`;
+  msg.textContent = text;
+  chatbotMessages.appendChild(msg);
+  chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+}
