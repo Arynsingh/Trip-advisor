@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TripDavisor — Explore Trips</title>
+  <link rel="stylesheet" href="tripx.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>TripDavisor</h1>
+      <p>Search destinations and filter by <strong>Season</strong>, Price, Rating.</p>
+    </header>
+
+    <div class="layout">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <label class="label" for="q">Search</label>
+        <input id="q" class="input" type="search" placeholder="Search title or location" />
+
+        <label class="label" for="location">Location</label>
+        <input id="location" class="input" type="text" placeholder="e.g. Goa, Shimla" />
+
+        <label class="label">Season</label>
+        <div class="chips" id="seasonChips"></div>
+        <p class="small">Pick one or more seasons.</p>
+
+        <label class="label">Price per night (INR)</label>
+        <div class="range-pair">
+          <input id="minPrice" class="input" type="number" placeholder="Min" value="0" />
+          <input id="maxPrice" class="input" type="number" placeholder="Max" value="10000" />
+        </div>
+
+        <label class="label">Minimum rating</label>
+        <select id="minRating" class="select">
+          <option value="0">Any</option>
+          <option value="3">3.0+</option>
+          <option value="4">4.0+</option>
+          <option value="4.5">4.5+</option>
+        </select>
+
+        <div class="row">
+          <button id="applyBtn" class="btn primary">Apply</button>
+          <button id="clearBtn" class="btn ghost">Clear</button>
+        </div>
+      </aside>
+
+      <!-- RESULTS -->
+      <main>
+        <div class="controls">
+          <div id="countText" class="count">0 results</div>
+          <div>
+            <label class="label" for="sortSelect">Sort</label>
+            <select id="sortSelect" class="select">
+              <option value="relevance">Relevance</option>
+              <option value="price_asc">Price: Low → High</option>
+              <option value="price_desc">Price: High → Low</option>
+              <option value="rating">Rating</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="results" class="grid"></div>
+        <div id="empty" class="empty" style="display:none;">No results match your filters.</div>
+      </main>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+<script src="script.js"></script>
+
