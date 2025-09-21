@@ -28,60 +28,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function getSuggestedSpots(preference, budget, people) {
         // This is a dummy function with hardcoded data.
-        const allSpots = {
+        const spots = {
             adventure: [
-                { name: "Rishikesh, India", description: "River rafting, trekking, and yoga.", img: "https://placehold.co/250x150/ff9800/fff?text=Rishikesh", budgetRange: [100, 300] },
-                { name: "Interlaken, Switzerland", description: "Paragliding and hiking in the Alps.", img: "https://placehold.co/250x150/4caf50/fff?text=Interlaken", budgetRange: [500, 1000] },
-                { name: "Queenstown, New Zealand", description: "Bungee jumping and jet boating.", img: "https://placehold.co/250x150/2196f3/fff?text=Queenstown", budgetRange: [700, 1500] }
+                { name: "Rishikesh, India", description: "River rafting, trekking, and yoga.", img: "https://images.unsplash.com/photo-1549721096-7649520b2d69?q=80&w=1740&auto=format&fit=crop" },
+                { name: "Interlaken, Switzerland", description: "Paragliding and hiking in the Alps.", img: "https://images.unsplash.com/photo-1627993358053-524f2b98e1ae?q=80&w=1674&auto=format&fit=crop" },
+                { name: "Queenstown, New Zealand", description: "Bungee jumping and jet boating.", img: "https://images.unsplash.com/photo-1558273760-26284f23b754?q=80&w=1740&auto=format&fit=crop" }
             ],
             cultural_heritage: [
-                { name: "Jaipur, India", description: "Explore historic forts and palaces.", img: "https://placehold.co/250x150/9c27b0/fff?text=Jaipur", budgetRange: [150, 400] },
-                { name: "Rome, Italy", description: "Ancient ruins like the Colosseum and Roman Forum.", img: "https://placehold.co/250x150/e91e63/fff?text=Rome", budgetRange: [400, 800] },
-                { name: "Kyoto, Japan", description: "Temples, shrines, and geisha districts.", img: "https://placehold.co/250x150/673ab7/fff?text=Kyoto", budgetRange: [600, 1200] }
+                { name: "Rome, Italy", description: "Ancient ruins like the Colosseum and Roman Forum.", img: "https://images.unsplash.com/photo-1552832320-c25e87a2a7a5?q=80&w=1740&auto=format&fit=crop" },
+                { name: "Kyoto, Japan", description: "Temples, shrines, and geisha districts.", img: "https://images.unsplash.com/photo-1542051841316-d3c5f6e8903c?q=80&w=1740&auto=format&fit=crop" },
+                { name: "Jaipur, India", description: "Historic forts and palaces of Rajasthan.", img: "https://images.unsplash.com/photo-1582239328224-e918c5e6089d?q=80&w=1740&auto=format&fit=crop" }
             ],
             beaches: [
-                { name: "Goa, India", description: "Vibrant nightlife and beautiful beaches.", img: "https://placehold.co/250x150/ffeb3b/000?text=Goa", budgetRange: [100, 350] },
-                { name: "Phuket, Thailand", description: "Stunning islands and water sports.", img: "https://placehold.co/250x150/00bcd4/fff?text=Phuket", budgetRange: [300, 700] },
-                { name: "Maldives", description: "Luxury resorts and clear blue waters.", img: "https://placehold.co/250x150/03a9f4/fff?text=Maldives", budgetRange: [1000, 5000] }
+                { name: "Maldives", description: "Luxury resorts and clear blue waters.", img: "https://images.unsplash.com/photo-1543851528-91255e141a0e?q=80&w=1740&auto=format&fit=crop" },
+                { name: "Goa, India", description: "Vibrant nightlife and beautiful beaches.", img: "https://images.unsplash.com/photo-1616428753232-a52140a79d00?q=80&w=1740&auto=format&fit=crop" },
+                { name: "Phuket, Thailand", description: "Stunning islands and water sports.", img: "https://images.unsplash.com/photo-1588636402447-789a8e0344d1?q=80&w=1740&auto=format&fit=crop" }
             ],
             mountains: [
-                { name: "Manali, India", description: "Snow-capped peaks and trekking routes.", img: "https://placehold.co/250x150/795548/fff?text=Manali", budgetRange: [120, 300] },
-                { name: "Banff National Park, Canada", description: "Turquoise lakes and mountain trails.", img: "https://placehold.co/250x150/607d8b/fff?text=Banff", budgetRange: [600, 1100] },
-                { name: "Swiss Alps, Switzerland", description: "Scenic views and skiing.", img: "https://placehold.co/250x150/9e9e9e/fff?text=Swiss+Alps", budgetRange: [700, 1500] }
+                { name: "Swiss Alps, Switzerland", description: "Scenic views and skiing.", img: "https://images.unsplash.com/photo-1518090022216-9b5f7e7f1f0e?q=80&w=1740&auto=format&fit=crop" },
+                { name: "Manali, India", description: "Snow-capped peaks and trekking routes.", img: "https://images.unsplash.com/photo-1621648011216-160a2b972e0a?q=80&w=1740&auto=format&fit=crop" },
+                { name: "Banff National Park, Canada", description: "Turquoise lakes and mountain trails.", img: "https://images.unsplash.com/photo-1510414842594-ead47a03fe0e?q=80&w=1740&auto=format&fit=crop" }
             ],
             festival: [
-                { name: "Rio de Janeiro, Brazil", description: "Known for the famous Carnival festival.", img: "https://placehold.co/250x150/ff5722/fff?text=Rio+Carnival", budgetRange: [400, 900] },
-                { name: "Munich, Germany", description: "Home of the world-renowned Oktoberfest.", img: "https://placehold.co/250x150/f44336/fff?text=Oktoberfest", budgetRange: [500, 1000] },
-                { name: "Nagaland, India", description: "Experience the colorful Hornbill Festival.", img: "https://placehold.co/250x150/ffc107/000?text=Hornbill", budgetRange: [200, 500] }
+                { name: "Rio de Janeiro, Brazil", description: "Known for the famous Carnival festival.", img: "https://images.unsplash.com/photo-1533038622830-1c39c894982a?q=80&w=1740&auto=format&fit=crop" },
+                { name: "Nagaland, India", description: "Experience the colorful Hornbill Festival.", img: "https://images.unsplash.com/photo-1585647530869-d9f75f7936a7?q=80&w=1740&auto=format&fit=crop" },
+                { name: "Munich, Germany", description: "Home of the world-renowned Oktoberfest.", img: "https://images.unsplash.com/photo-1632734199852-c6f3768f5b8c?q=80&w=1740&auto=format&fit=crop" }
             ],
-            wildlife: [
-                { name: "Ranthambore, India", description: "Tiger safari in a historic park.", img: "https://placehold.co/250x150/8bc34a/fff?text=Ranthambore", budgetRange: [250, 600] },
-                { name: "Maasai Mara, Kenya", description: "Witness the Great Migration.", img: "https://placehold.co/250x150/009688/fff?text=Maasai+Mara", budgetRange: [1500, 3000] }
-            ],
-            food: [
-                { name: "Kolkata, India", description: "A paradise for street food lovers.", img: "https://placehold.co/250x150/ff9800/fff?text=Kolkata+Food", budgetRange: [100, 200] },
-                { name: "Tokyo, Japan", description: "Michelin-star restaurants and unique culinary experiences.", img: "https://placehold.co/250x150/9e9e9e/fff?text=Tokyo+Food", budgetRange: [800, 1800] }
-            ],
-            city_life: [
-                { name: "Dubai, UAE", description: "Modern architecture, luxury shopping, and vibrant nightlife.", img: "https://placehold.co/250x150/795548/fff?text=Dubai", budgetRange: [500, 1000] },
-                { name: "New York, USA", description: "Iconic landmarks and diverse cultural scene.", img: "https://placehold.co/250x150/607d8b/fff?text=New+York", budgetRange: [700, 1500] }
-            ]
         };
 
-        const totalBudget = budget * people;
-
-        const filteredSpots = (allSpots[preference] || []).filter(spot => {
-            return totalBudget >= spot.budgetRange[0] && totalBudget <= spot.budgetRange[1];
-        });
-
-        // If no spots match the budget, return all spots for that preference as a fallback
-        return filteredSpots.length > 0 ? filteredSpots : (allSpots[preference] || []);
+        return spots[preference] || [];
     }
 
     function displaySpots(spots) {
         spotsList.innerHTML = ''; // Clear previous results
         if (spots.length === 0) {
-            spotsList.innerHTML = '<p style="text-align: center; color: #888;">No spots found for your criteria. Please adjust your budget or preference.</p>';
+            spotsList.innerHTML = '<p style="text-align: center; color: #888;">No spots found for your criteria.</p>';
         } else {
             spots.forEach(spot => {
                 const card = document.createElement('div');
@@ -91,7 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="spot-card-content">
                         <h3>${spot.name}</h3>
                         <p>${spot.description}</p>
-                        <p class="budget-info">Budget (per person): $${spot.budgetRange[0]} - $${spot.budgetRange[1]}</p>
                     </div>
                 `;
                 spotsList.appendChild(card);

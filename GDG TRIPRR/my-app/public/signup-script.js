@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // In a real application, you would send this data to a server to create an account.
-            alert('Account created successfully! You will be redirected to the trip planner page.');
+            alert('Account created successfully! You will be redirected to the trip planner.');
             
             // Redirect to the trip planner page after successful sign-up
             window.location.href = 'suggest.html';

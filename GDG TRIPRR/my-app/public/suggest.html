@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body>
+<body class="suggest-page">
     <div id="root">
         <header class="navbar">
             <div class="nav-logo">TripAI</div>
@@ -63,5 +63,27 @@
         </main>
     </div>
     <script src="suggest-script.js"></script>
+
+    <!-- Chatbot Widget -->
+<div id="chatbot-widget" class="chatbot-widget">
+    <div class="chatbot-header">
+        <span>TripAI Assistant</span>
+        <button id="chatbot-close">×</button>
+    </div>
+    <div id="chatbot-messages" class="chatbot-messages">
+        <div class="message bot">👋 Hi! Ask me about travel destinations, tips, or plans.</div>
+    </div>
+    <div class="chatbot-input-container">
+        <input type="text" id="chatbot-input" placeholder="Type your question...">
+        <button id="chatbot-send">Send</button>
+    </div>
+</div>
+
+<!-- Floating Button -->
+<button id="chatbot-toggle" class="chatbot-toggle">💬</button>
+
+<script src="chatbot.js"></script>
+
+
 </body>
 </html>

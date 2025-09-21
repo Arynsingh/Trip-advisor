@@ -8,19 +8,27 @@ document.addEventListener('DOMContentLoaded', () => {
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
 
-            // Simple verification logic based on user's request
-            const isEmailValid = email.endsWith('@gmail.com');
-            const emailPrefix = email.split('@')[0];
-            const isPasswordSimilar = password.includes(emailPrefix);
+            // Verification logic: email must end with @gmail.com
+            // and the password must be similar to the email's username part.
+            const emailRegex = /(.+)@gmail\.com$/;
+            const match = email.match(emailRegex);
 
-            // Check if the entered credentials are correct
-            if (isEmailValid && isPasswordSimilar) {
-                alert('Login successful! Redirecting to trip planner...');
-                // Redirect to the trip planner page
-                window.location.href = 'suggest.html';
-            } else {
-                alert('Invalid email or password. Please try again.');
+            if (!match) {
+                alert('Please enter a valid email address ending with @gmail.com.');
+                return;
             }
+
+            const username = match[1];
+            if (!password.includes(username)) {
+                alert('Password must be similar to the email username.');
+                return;
+            }
+
+            // In a real application, you would send this data to a server for authentication.
+            alert('Login successful! Redirecting to trip planner...');
+
+            // Redirect to the trip planner page
+            window.location.href = 'suggest.html';
         });
     }
 });
