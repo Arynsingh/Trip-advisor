@@ -1,0 +1,460 @@
+/* General Body and Fonts */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+#root {
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Header/Navbar */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 3rem;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #4a90e2;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #555;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+    color: #4a90e2;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.theme-switch {
+    position: relative;
+    width: 50px;
+    height: 28px;
+}
+
+.dark-mode-toggle {
+    display: none;
+}
+
+.dark-mode-toggle + label {
+    display: block;
+    width: 50px;
+    height: 28px;
+    background-color: #ccc;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dark-mode-toggle:checked + label {
+    background-color: #4a90e2;
+}
+
+.dark-mode-toggle:checked + label::after {
+    transform: translateX(22px);
+}
+
+.login-button, .signup-button {
+    padding: 0.5rem 1rem;
+    border: 1px solid #4a90e2;
+    background-color: #fff;
+    color: #4a90e2;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.login-button:hover, .signup-button:hover {
+    background-color: #4a90e2;
+    color: #fff;
+}
+
+/* Page Containers */
+.login-container, .signup-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    width: 100%;
+}
+
+.login-box, .signup-box {
+    background-color: #fff;
+    padding: 3rem 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+.login-title, .signup-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.login-subtitle, .signup-subtitle {
+    color: #777;
+    margin-bottom: 2rem;
+}
+
+.login-form, .signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.input-group {
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #555;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+.options-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.remember-me input {
+    margin-right: 0.5rem;
+}
+
+.forgot-password, .login-link a {
+    color: #4a90e2;
+    text-decoration: none;
+    transition: text-decoration 0.3s ease;
+}
+
+.forgot-password:hover, .login-link a:hover {
+    text-decoration: underline;
+}
+
+.login-button, .signup-button {
+    background-color: #4a90e2;
+    color: #fff;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover, .signup-button:hover {
+    background-color: #357bd8;
+}
+
+.social-login {
+    margin-top: 2rem;
+}
+
+.social-login p {
+    color: #888;
+    margin-bottom: 1rem;
+}
+
+.social-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.social-button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.social-button:hover {
+    background-color: #f5f5f5;
+    border-color: #ccc;
+}
+
+.signup-link, .login-link {
+    margin-top: 2rem;
+    color: #777;
+}
+
+.signup-link a, .login-link a {
+    color: #4a90e2;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.signup-link a:hover, .login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Trip Planner Page Styles */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    width: 100%;
+}
+
+.search-form-container {
+    background-color: #fff;
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 600px;
+}
+
+.trip-planner-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.form-group select {
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.suggest-button {
+    background-color: #4a90e2;
+    color: #fff;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+}
+
+.suggest-button:hover {
+    background-color: #357bd8;
+}
+
+/* Results Section */
+.results-container {
+    margin-top: 3rem;
+    width: 100%;
+    max-width: 800px;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.hidden {
+    display: none;
+}
+
+.results-container h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #4a90e2;
+    margin-bottom: 1.5rem;
+}
+
+.spots-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.spot-card {
+    border: 1px solid #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.spot-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.spot-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.spot-card-content {
+    padding: 1rem;
+}
+
+.spot-card-content h3 {
+    font-size: 1.2rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.spot-card-content p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+}
+
+.dark-mode .navbar, .dark-mode .search-form-container, .dark-mode .results-container, .dark-mode .login-box, .dark-mode .signup-box {
+    background-color: #162447;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.dark-mode .nav-logo {
+    color: #a4e4ff;
+}
+
+.dark-mode .login-button, .dark-mode .signup-button, .dark-mode .social-button {
+    background-color: #162447;
+    border-color: #a4e4ff;
+    color: #a4e4ff;
+}
+
+.dark-mode .login-button:hover, .dark-mode .signup-button:hover, .dark-mode .social-button:hover {
+    background-color: #a4e4ff;
+    color: #162447;
+}
+
+.dark-mode .form-group label {
+    color: #e0e0e0;
+}
+
+.dark-mode .form-group input, .dark-mode .form-group select {
+    background-color: #2c3a57;
+    color: #e0e0e0;
+    border-color: #4a5c88;
+}
+
+.dark-mode .form-group select option {
+    background-color: #162447;
+}
+
+.dark-mode .suggest-button {
+    background-color: #357bd8;
+}
+
+.dark-mode .suggest-button:hover {
+    background-color: #4a90e2;
+}
+
+.dark-mode .results-container h2 {
+    color: #a4e4ff;
+}
+
+.dark-mode .spot-card {
+    background-color: #2c3a57;
+    border-color: #4a5c88;
+}
+
+.dark-mode .spot-card-content p {
+    color: #b0b0b0;
+}
+
+.dark-mode .login-title, .dark-mode .login-subtitle, .dark-mode .signup-title, .dark-mode .signup-subtitle, .dark-mode .signup-link, .dark-mode .login-link {
+    color: #e0e0e0;
+}
+
+.dark-mode .nav-item {
+    color: #b0b0b0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
