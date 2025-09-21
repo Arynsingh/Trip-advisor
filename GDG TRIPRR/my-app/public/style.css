@@ -593,6 +593,25 @@ body.dark-mode {
 }
 #chatbot-send:hover { background: #357bd8; }
 
+.trip-dates {
+    margin: 1rem 0;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.trip-dates label {
+    font-weight: 600;
+    color: #333;
+}
+
+.trip-dates input {
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+
 
 /* Animations */
 @keyframes fadeIn {
