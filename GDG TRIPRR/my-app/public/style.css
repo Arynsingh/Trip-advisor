@@ -61,6 +61,7 @@ body {
     display: flex;
     align-items: center;
     gap: 1.5rem;
+    margin-left: auto; /* This pushes the container to the right */
 }
 
 .theme-switch {
@@ -389,7 +390,7 @@ body {
 
 .spot-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .spot-card img {
